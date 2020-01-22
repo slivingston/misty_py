@@ -90,7 +90,7 @@ class MistyAPI(RestAPI):
         if not ip:
             raise ValueError('You must provide an ip argument, or set $MISTY_IP in your env')
 
-        if not ip.startswith('http://') or ip.startswith('https://'):
+        if not (ip.startswith('http://') or ip.startswith('https://')):
             ip = f'http://{ip}'
         return ip
 
